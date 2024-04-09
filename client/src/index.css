@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* In your CSS file, e.g., custom.css */
+.blurBorder:hover {
+  border-color: rgba(255, 0, 221, 0.5);
+  -webkit-box-shadow: 0 0 0 4px rgba(234, 100, 217, 0.3);
+  box-shadow: 0 0 0 4px rgba(234, 100, 217, 0.3);
+}
