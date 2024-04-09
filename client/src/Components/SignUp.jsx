@@ -49,7 +49,6 @@ const Welcome = () => {
           render: "User ID available",
           type: "success",
           isLoading: false,
-          closeOnClick: true,
           autoClose: 2000,
           closeOnClick: true,
         });
