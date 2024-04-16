@@ -8,3 +8,7 @@
   -webkit-box-shadow: 0 0 0 4px rgba(234, 100, 217, 0.3);
   box-shadow: 0 0 0 4px rgba(234, 100, 217, 0.3);
 }
+
+.relative:hover .transition-transform {
+  transform: translateY(-10px); /* Adjust the value as per your preference */
+}

@@ -125,64 +125,77 @@ const Selection = () => {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex flex-col items-center">
-            <img
-              src="https://res.cloudinary.com/djqjag779/image/upload/f_auto,q_auto/fmlynnsyxqkbe9t6ppxh"
-              alt="Designer looking to share work"
-              className={`mb-4 bg-gray-200 p-4 rounded-lg ${
-                selectedOption === "Designer" && "border-2 border-pink-500"
-              }`}
-              width={400}
-              height={400}
-              style={{
-                aspectRatio: "400 / 400",
-                objectFit: "cover",
-                cursor: "pointer",
-              }}
-              onClick={() => handleSelectOption("Designer")}
-            />
-            <p className="text-center font-medium">
-              I'm a designer looking to share my work
-            </p>
+            <div className="relative">
+              <img
+                src="https://res.cloudinary.com/djqjag779/image/upload/f_auto,q_auto/fmlynnsyxqkbe9t6ppxh"
+                alt="Designer looking to share work"
+                className={`mb-4 bg-gray-200 p-4 rounded-lg transition-transform transition-bg duration-500  ${
+                  selectedOption === "Designer"
+                    ? "transform -translate-y-4 border-2 border-pink-500"
+                    : "blurBorder"
+                }`}
+                width={400}
+                height={400}
+                style={{
+                  aspectRatio: "400 / 400",
+                  objectFit: "cover",
+                  cursor: "pointer",
+                }}
+                onClick={() => handleSelectOption("Designer")}
+              />
+              <p className="text-center font-medium">
+                I'm a designer looking to share my work
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <div className="relative">
+              <img
+                src="https://res.cloudinary.com/djqjag779/image/upload/f_auto,q_auto/keaqtmvzkwiueyvvje5w"
+                alt="Looking to hire a designer"
+                className={`mb-4 bg-gray-200 p-4 rounded-lg transition-transform transition-bg duration-500  ${
+                  selectedOption === "Hiring"
+                    ? "transform -translate-y-4 border-2 border-pink-500 "
+                    : "blurBorder"
+                }`}
+                width={400}
+                height={400}
+                style={{
+                  aspectRatio: "400 / 400",
+                  objectFit: "cover",
+                  cursor: "pointer",
+                }}
+                onClick={() => handleSelectOption("Hiring")}
+              />
+              <p className="text-center font-medium">
+                I'm looking to hire a designer
+              </p>
+            </div>
           </div>
           <div className="flex flex-col items-center">
-            <img
-              src="https://res.cloudinary.com/djqjag779/image/upload/f_auto,q_auto/keaqtmvzkwiueyvvje5w"
-              alt="Looking to hire a designer"
-              className={`mb-4 bg-gray-200 p-4 rounded-lg ${
-                selectedOption === "Hiring" && "border-2 border-pink-500"
-              }`}
-              width={400}
-              height={400}
-              style={{
-                aspectRatio: "400 / 400",
-                objectFit: "cover",
-                cursor: "pointer",
-              }}
-              onClick={() => handleSelectOption("Hiring")}
-            />
-            <p className="text-center font-medium">
-              I'm looking to hire a designer
-            </p>
-          </div>
-          <div className="flex flex-col items-center">
-            <img
-              src="https://res.cloudinary.com/djqjag779/image/upload/f_auto,q_auto/fpjcf4iq0kuiucdxulpa"
-              alt="Looking for design inspiration"
-              className={`mb-4 bg-gray-200 p-4 rounded-lg ${
-                selectedOption === "Inspiration" && "border-2 border-pink-500"
-              }`}
-              width={400}
-              height={400}
-              style={{
-                aspectRatio: "400 / 400",
-                objectFit: "cover",
-                cursor: "pointer",
-              }}
-              onClick={() => handleSelectOption("Inspiration")}
-            />
-            <p className="text-center font-medium">
-              I'm looking for design inspiration
-            </p>
+            <div className="relative ">
+              <img
+                src="https://res.cloudinary.com/djqjag779/image/upload/f_auto,q_auto/fpjcf4iq0kuiucdxulpa"
+                alt="Looking for design inspiration"
+                className={`mb-4 bg-gray-200 p-4 rounded-lg transition-transform transition-bg duration-500  ${
+                  selectedOption === "Inspiration"
+                    ? "transform -translate-y-4 border-2 border-pink-500  "
+                    : "blurBorder"
+                }`}
+                width={400}
+                height={400}
+                style={{
+                  aspectRatio: "400 / 400",
+                  objectFit: "cover",
+                  cursor: "pointer",
+                }}
+                onClick={() => handleSelectOption("Inspiration")}
+              />
+              <p className="text-center font-medium">
+                I'm looking for design inspiration
+              </p>
+            </div>
           </div>
         </div>
         <div className="mt-12 flex justify-center">

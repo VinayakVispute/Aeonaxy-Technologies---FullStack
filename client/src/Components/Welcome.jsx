@@ -68,7 +68,7 @@ const Welcome = () => {
       <main className="flex items-center justify-center w-full">
         <div className="p-4 md:p-[40px] flex-grow max-w-3xl">
           <header className="mb-6 mx-auto text-center">
-            <h1 className="text-2xl md:text-3xl font-bold mb-2">
+            <h1 className="text-2xl md:text-3xl  mb-2 font-extrabold text-gray-900">
               Welcome! Let's create your profile
             </h1>
             <p className="text-gray-600 text-base">
@@ -89,7 +89,7 @@ const Welcome = () => {
                   className={`w-32 h-32 ${
                     !selectedAvatar &&
                     "border-4 border-dashed border-gray-300 hover:border-pink-500"
-                  } rounded-full flex items-center justify-center cursor-pointer`}
+                  } rounded-full flex items-center justify-center cursor-pointer focus-visible:outline-none blurBorder hover:shadow-[0px_4px_100px_0px_#d53f8c]`}
                 >
                   {selectedAvatar ? (
                     <img
@@ -278,7 +278,7 @@ const Welcome = () => {
                       message: "Location is required",
                     },
                   })}
-                  className="peer py-3 my-3 pe-0 ps-3 block w-full bg-transparent border-t-transparent border-b-2 border-x-transparent  text-sm focus-visible:outline-none focus:bg-gray-50 focus:border-t-transparent focus:border-x-transparent focus:border-b-pink-500 focus:ring-0 disabled:opacity-50 disabled:pointer-events-none "
+                  className="peer py-3 my-3 pe-0 ps-3 block w-full bg-transparent border-t-transparent border-b-2 border-x-transparent  text-sm focus-visible:outline-none focus:bg-gray-50 focus:border-t-transparent focus:border-x-transparent  blurBorder focus:shadow-[0px_4px_100px_0px_#d53f8c] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none rounded-lg "
                   placeholder="Enter your location..."
                 />
                 {errors.location && (
