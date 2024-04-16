@@ -4,6 +4,7 @@ import axios from "axios";
 import { useOnBoardingContext } from "../contexts/Onboarding";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { TiTick } from "react-icons/ti";
 
 const Selection = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -123,10 +124,10 @@ const Selection = () => {
           Select the options that best describe you. Don't worry, you can
           explore other options later.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 gap-y-16 ">
           <div className="flex flex-col items-center">
             <div
-              className={`relative bg-gray-200 h-[300px] rounded-lg transition-transform transition-border duration-500 cursor-pointer ${
+              className={`relative bg-gray-200 min-h-[300px] max-w-[400px] rounded-lg transition-transform transition-border duration-500 cursor-pointer ${
                 selectedOption === "Designer"
                   ? "transform -translate-y-4 border-2 border-pink-500"
                   : "blurBorder"
@@ -136,38 +137,37 @@ const Selection = () => {
               <img
                 src="https://res.cloudinary.com/djqjag779/image/upload/f_auto,q_auto/fmlynnsyxqkbe9t6ppxh"
                 alt="Designer looking to share work"
-                className={`relative mb-4 p-4 rounded-lg transition-transform duration-500 ${
+                className={`relative mb-4 p-4 rounded-lg transition-transform duration-500  w-auto ${
                   selectedOption === "Designer"
-                    ? "transform -translate-y-4 -top-[5rem]"
+                    ? "transform -translate-y-4 -top-[5rem] max-h-[250px]"
                     : ""
                 }`}
-                width={400}
-                height={400}
                 style={{
                   aspectRatio: "400 / 400",
                   objectFit: "cover",
                 }}
               />
               <p
-                className={`m-2 text-center absolute top-[9.5rem] text-sm transition-opacity transition-max-h  ${
+                className={`m-2 text-center absolute top-[9.5rem] text-sm transition-opacity transition-max-h   ${
                   selectedOption === "Designer"
                     ? "max-h-[100px] opacity-100"
                     : "max-h-0 opacity-0"
                 }`}
               >
-                Today we will take a look at beautifully designed Today we will
-                take a look at beautifully designed Today we will take a look at
-                beautifully designed
-              </p>
-              <p className="text-center font-medium pt-8">
-                I'm a designer looking to share my work
+                Find the perfect addition to your team. Browse through our
+                curated selection of talented designers ready to bring your
+                vision to life.
+                <TiTick className="mx-auto h-8 w-8 mt-4 text-white bg-pink-600 rounded-full" />
               </p>
             </div>
+            <p className="text-center font-medium pt-4">
+              I'm a designer looking to share my work
+            </p>
           </div>
 
           <div className="flex flex-col items-center">
             <div
-              className={`relative bg-gray-200 h-[300px] rounded-lg transition-transform transition-border duration-500 cursor-pointer ${
+              className={`relative bg-gray-200 min-h-[300px] max-w-[400px] rounded-lg transition-transform transition-border duration-500 cursor-pointer ${
                 selectedOption === "Hiring"
                   ? "transform -translate-y-4 border-2 border-pink-500"
                   : "blurBorder"
@@ -177,13 +177,11 @@ const Selection = () => {
               <img
                 src="https://res.cloudinary.com/djqjag779/image/upload/f_auto,q_auto/keaqtmvzkwiueyvvje5w"
                 alt="Looking to hire a designer"
-                className={`relative mb-4 p-4 rounded-lg transition-transform duration-500 ${
+                className={`relative mb-4 p-4 rounded-lg transition-transform duration-500 w-auto ${
                   selectedOption === "Hiring"
-                    ? "transform -translate-y-4 -top-[5rem]"
+                    ? "transform -translate-y-4 -top-[5rem] max-h-[250px]"
                     : ""
                 }`}
-                width={400}
-                height={400}
                 style={{
                   aspectRatio: "400 / 400",
                   objectFit: "cover",
@@ -196,17 +194,20 @@ const Selection = () => {
                     : "max-h-0 opacity-0"
                 }`}
               >
-                I'm looking to hire a designer
-              </p>
-              <p className="text-center font-medium pt-8">
-                I'm looking to hire a designer
+                Find the perfect addition to your team. Browse through our
+                curated selection of talented designers ready to bring your
+                vision to life.
+                <TiTick className="mx-auto h-8 w-8 mt-4 text-white bg-pink-600 rounded-full" />
               </p>
             </div>
+            <p className="text-center font-medium pt-4">
+              I'm looking to hire a designer
+            </p>
           </div>
 
           <div className="flex flex-col items-center">
             <div
-              className={`relative bg-gray-200 h-[300px] rounded-lg transition-transform transition-border duration-500 cursor-pointer ${
+              className={`relative bg-gray-200 min-h-[300px] max-w-[400px] rounded-lg transition-transform transition-border duration-500 cursor-pointer ${
                 selectedOption === "Inspiration"
                   ? "transform -translate-y-4 border-2 border-pink-500"
                   : "blurBorder"
@@ -218,11 +219,9 @@ const Selection = () => {
                 alt="Looking for design inspiration"
                 className={`relative mb-4 p-4 rounded-lg transition-transform duration-500 ${
                   selectedOption === "Inspiration"
-                    ? "transform -translate-y-4 -top-[5rem]"
+                    ? "transform -translate-y-4 -top-[5rem] max-h-[250px]"
                     : ""
                 }`}
-                width={400}
-                height={400}
                 style={{
                   aspectRatio: "400 / 400",
                   objectFit: "cover",
@@ -235,12 +234,14 @@ const Selection = () => {
                     : "max-h-0 opacity-0"
                 }`}
               >
-                I'm looking for design inspiration
-              </p>
-              <p className="text-center font-medium pt-8">
-                I'm looking for design inspiration
+                With over 7 million shots from a visit community of designers.
+                Pribble is the leading source for design inspiration.
+                <TiTick className="mx-auto h-8 w-8 mt-4 text-white bg-pink-600 rounded-full" />
               </p>
             </div>
+            <p className="text-center font-medium pt-4">
+              I'm looking for design inspiration
+            </p>
           </div>
         </div>
         <div className="mt-12 flex justify-center">
