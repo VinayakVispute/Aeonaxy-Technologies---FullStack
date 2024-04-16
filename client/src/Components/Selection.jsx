@@ -9,7 +9,6 @@ import { TiTick } from "react-icons/ti";
 const Selection = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const { userData, setUserData } = useOnBoardingContext();
-  console.log(userData);
   const navigate = useNavigate();
   const handleSelectOption = (option) => {
     setSelectedOption((prevOption) => (prevOption === option ? null : option));
@@ -35,7 +34,6 @@ const Selection = () => {
     // Proceed with form submission
     setUserData((prevData) => ({ ...prevData, purpose: selectedOption }));
     try {
-      console.log("User data", userData, selectedOption);
       // Display loading toast
       toast.loading("Registering user...", {
         toastId: "registering-user",
@@ -49,7 +47,7 @@ const Selection = () => {
       formData.append("avatar", userData.avatar);
       formData.append("purpose", selectedOption);
       const response = await axios.post(
-        "http://localhost:8000/register",
+        `${import.meta.env.VITE_SERVER}/register`,
         formData,
         {
           headers: {
@@ -57,10 +55,8 @@ const Selection = () => {
           },
         }
       );
-      console.log(response);
 
       if (!response?.data?.success) {
-        console.log(response?.data?.message);
         // Update toast with error message
         toast.update("registering-user", {
           render:
@@ -83,7 +79,6 @@ const Selection = () => {
       // Navigate to confirmation page
       return navigate("/?page=confirm");
     } catch (error) {
-      console.log("Error registering user:", error.message);
       // Update toast with error message
       return toast.update("registering-user", {
         render: "Registration failed! Please try again.",

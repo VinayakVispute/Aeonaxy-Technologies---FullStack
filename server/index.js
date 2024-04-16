@@ -13,8 +13,9 @@ const PORT = process.env.PORT || 8000;
 
 const UserRoutes = require("./routes/RegisterUser");
 
+
 // Middleware
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: process.env.CLIENT_LINK, credentials: true }));
 app.use(express.json());
 app.use(fileupload({ useTempFiles: true, tempFileDir: "/tmp/" }));
 

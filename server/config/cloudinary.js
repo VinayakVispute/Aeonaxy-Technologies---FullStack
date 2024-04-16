@@ -2,9 +2,6 @@
 const cloudinary = require("cloudinary").v2;
 
 exports.cloudinaryConnect = () => {
-  console.log(process.env.CLOUD_NAME);
-  console.log(process.env.API_KEY);
-  console.log(process.env.API_SECRET);
   try {
     cloudinary.config({
       cloud_name: process.env.CLOUD_NAME,

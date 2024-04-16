@@ -3,17 +3,17 @@ const nodemailer = require("nodemailer");
 const sendEmail = async (email, name) => {
   try {
     const transporter = nodemailer.createTransport({
-      host: process.env.RESEND_HOST,
-      port: process.env.RESNED_PORT,
+      host: process.env.SEND_HOST,
+      port: process.env.SEND_PORT,
       secure: false, // Use `true` for port 465, `false` for all other ports
       auth: {
-        user: process.env.RESEND_USER,
-        pass: process.env.RESEND_PASS,
+        user: process.env.SEND_USER,
+        pass: process.env.SEND_PASS,
       },
     });
 
     const mailOptions = {
-      from: process.env.RESEND_FROM,
+      from: process.env.SEND_FROM,
       to: email,
       subject: "Welcome to Aeonaxy FullStack",
       html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

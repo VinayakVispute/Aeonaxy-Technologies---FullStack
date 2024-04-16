@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import Logo from "../../assets/DribbbleIcon.png";
 import { BsFillBagXFill } from "react-icons/bs";
+import { useState } from "react";
 const NavBar = () => {
+  const [openStatus, setOpenStatus] = useState(false);
   return (
     <header className="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full bg-white border-b border-gray-200 text-sm py-3 md:py-0  ">
       <nav
@@ -14,11 +16,9 @@ const NavBar = () => {
           </Link>
           <div className="md:hidden">
             <button
+              onClick={() => setOpenStatus(!openStatus)}
               type="button"
-              className="hs-collapse-toggle size-9 flex justify-center items-center text-sm font-semibold rounded-lg border border-gray-200 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none     "
-              data-hs-collapse="#navbar-collapse-with-animation"
-              aria-controls="navbar-collapse-with-animation"
-              aria-label="Toggle navigation"
+              className="cursor-pointer size-9 flex justify-center items-center text-sm font-semibold rounded-lg border border-gray-200 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none     "
             >
               <svg
                 className="hs-collapse-open:hidden flex-shrink-0 size-4"
@@ -55,8 +55,9 @@ const NavBar = () => {
           </div>
         </div>
         <div
-          id="navbar-collapse-with-animation"
-          className="hs-collapse  overflow-hidden transition-all duration-300 basis-full grow md:flex justify-between items-center"
+          className={`hs-collapse ${
+            openStatus && "hidden"
+          } overflow-hidden transition-all duration-300 basis-full grow md:flex justify-between items-center`}
         >
           <div className="flex flex-col w-full  gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:gap-y-0 lg:gap-x-7 md:gap-x-4 md:mt-0 md:ps-4 lg:ps-7 mr-2">
             <Link

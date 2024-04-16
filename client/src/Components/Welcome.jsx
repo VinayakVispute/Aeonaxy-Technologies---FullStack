@@ -12,7 +12,6 @@ const Welcome = () => {
   const [showDefaultAvatars, setShowDefaultAvatars] = useState(false);
   const [avatar, setAvatar] = useState(null);
   const [loading, setLoading] = useState(true);
-  console.log(avatar);
   const {
     register,
     handleSubmit,

@@ -3,7 +3,8 @@ import { useOnBoardingContext } from "../contexts/Onboarding";
 import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-
+import NavBar from "./Common/NavBar";
+import Footer from "./Common/Footer";
 const Confirmation = () => {
   const { userData } = useOnBoardingContext();
   const handleReSendEmail = async () => {
@@ -19,13 +20,11 @@ const Confirmation = () => {
       });
 
       const response = await axios.post(
-        "http://localhost:8000/register/resend",
+        `${import.meta.env.VITE_SERVER}/register/resend`,
         {
           email: userData.email,
         }
       );
-
-      console.log(response);
 
       if (!response.data.success) {
         console.error("Error resending email:", response.data);
@@ -65,56 +64,62 @@ const Confirmation = () => {
     return Navigate("/?page=interest");
   }
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-4 py-8 bg-gray-100">
-      <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow">
-        <h2 className="text-center text-3xl font-extrabold text-gray-900">
-          Please verify your email...
-          <div className="flex justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-40 w-40 text-[#bd1e59]"
-            >
-              <path d="M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h8" />
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-              <path d="m16 19 2 2 4-4" />
-            </svg>
+    <>
+      <NavBar />
+      <div className="flex flex-col items-center justify-center min-h-screen px-4 py-8 bg-gray-100">
+        <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow">
+          <h2 className="text-center text-3xl font-extrabold text-gray-900">
+            Please verify your email...
+            <div className="flex justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width={24}
+                height={24}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-40 w-40 text-[#bd1e59]"
+              >
+                <path d="M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h8" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                <path d="m16 19 2 2 4-4" />
+              </svg>
+            </div>
+          </h2>
+          <div className="mt-6 space-y-4 text-center">
+            <p className="text-sm text-gray-600">
+              Please verify your email address. We've sent a confirmation email
+              to:
+            </p>
+            <p className="font-medium text-[#bd1e59]">
+              {userData?.email || " "}
+            </p>
+            <p className="text-sm text-gray-600">
+              Click the confirmation link in that email to begin using Pribble.
+            </p>
+            <p className="text-sm text-gray-600">
+              Didn't receive the email? Check your Spam folder, it may have been
+              caught by a filter. If you still don't see it, you can{" "}
+              <button className="text-[#bd1e59]" onClick={handleReSendEmail}>
+                resend the confirmation email
+              </button>
+              .
+            </p>
+            <p className="text-sm text-gray-600">
+              Wrong email address?{" "}
+              <Link className="text-[#bd1e59]" to="/change-email">
+                Change it
+              </Link>
+              .
+            </p>
           </div>
-        </h2>
-        <div className="mt-6 space-y-4 text-center">
-          <p className="text-sm text-gray-600">
-            Please verify your email address. We've sent a confirmation email
-            to:
-          </p>
-          <p className="font-medium text-[#bd1e59]">{userData?.email || " "}</p>
-          <p className="text-sm text-gray-600">
-            Click the confirmation link in that email to begin using Pribble.
-          </p>
-          <p className="text-sm text-gray-600">
-            Didn't receive the email? Check your Spam folder, it may have been
-            caught by a filter. If you still don't see it, you can{" "}
-            <button className="text-[#bd1e59]" onClick={handleReSendEmail}>
-              resend the confirmation email
-            </button>
-            .
-          </p>
-          <p className="text-sm text-gray-600">
-            Wrong email address?{" "}
-            <Link className="text-[#bd1e59]" to="/change-email">
-              Change it
-            </Link>
-            .
-          </p>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

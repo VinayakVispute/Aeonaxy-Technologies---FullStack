@@ -21,7 +21,7 @@ const Welcome = () => {
         toastId: "loading",
       });
       const response = await axios.post(
-        "http://localhost:8000/register/check",
+        `${import.meta.env.VITE_SERVER}/register/check`,
         {
           username: data.username,
           email: data.email,
