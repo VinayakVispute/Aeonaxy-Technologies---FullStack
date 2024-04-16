@@ -2,23 +2,25 @@ import React, { useState } from "react";
 import Logo from "../assets/DribbbleIcon.png";
 import { useForm } from "react-hook-form";
 import { useOnBoardingContext } from "../contexts/Onboarding";
-import { useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { RiAlertFill } from "react-icons/ri";
 import { toast } from "react-toastify";
+import Spinner from "./Common/Spinner";
 
 const Welcome = () => {
   const [selectedAvatar, setSelectedAvatar] = useState(null);
   const [showDefaultAvatars, setShowDefaultAvatars] = useState(false);
   const [avatar, setAvatar] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  console.log(avatar);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const { setUserData } = useOnBoardingContext();
+  const { setUserData, userData } = useOnBoardingContext();
+  const { name, username, email, password } = userData;
   const navigate = useNavigate();
   const onSubmit = (data) => {
     try {
@@ -43,6 +45,7 @@ const Welcome = () => {
 
   const handleAvatarSelection = (avatarUrl) => {
     setSelectedAvatar(avatarUrl);
+    setAvatar(avatarUrl);
     setShowDefaultAvatars(false); // Hide default avatars after selection
   };
 
@@ -58,11 +61,34 @@ const Welcome = () => {
     }
   };
 
+  if (!name || !username || !email || !password) {
+    toast.error("Name, Username, Email and Password are required to proceed");
+    return <Navigate to="/" />;
+  }
+
   return (
     <>
-      <nav className="flex items-center justify-between pt-10 px-4 md:px-14">
-        <div className="flex items-center">
-          <img src={Logo} alt="Logo" className="w-auto h-8" />
+      <nav className="flex items-center justify-center pt-10 px-4 md:px-14 max-w-4xl mx-auto">
+        <div className="flex items-center justify-between w-full ">
+          <Link to="/">
+            <img src={Logo} alt="Logo" className="w-auto h-8 cursor-pointer" />
+          </Link>
+          <svg
+            onClick={() => navigate(-1)}
+            xmlns="http://www.w3.org/2000/svg"
+            width={24}
+            height={24}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="text-gray-400 cursor-pointer"
+          >
+            <path d="m12 19-7-7 7-7" />
+            <path d="M19 12H5" />
+          </svg>
         </div>
       </nav>
       <main className="flex items-center justify-center w-full">
@@ -118,12 +144,7 @@ const Welcome = () => {
                 <input
                   type="file"
                   id="avatar"
-                  {...register("avatar", {
-                    required: {
-                      value: true,
-                      message: "Profile Photo is required",
-                    },
-                  })}
+                  {...register("avatar", {})}
                   className="hidden"
                   onChange={handleFileChange}
                 />
@@ -134,18 +155,13 @@ const Welcome = () => {
               whitespace-nowrap text-sm font-medium ring-offset-background
               transition-colors focus-visible:outline-none
               disabled:pointer-events-none disabled:opacity-50
-              hover:bg-pink-800/90 h-10 bg-pink-500 text-white py-2 px-4
-              rounded mb-2 cursor-pointer"
+              bg-pink-600 hover:bg-pink-400  focus:ring-4 focus:outline-none focus:ring-pink-300 text-white py-2 px-4
+              rounded mb-2 cursor-pointer "
                   >
                     Choose image
                   </label>
                 </button>
               </div>
-              {errors.avatar && (
-                <p className="text-sm text-red-500 py-1">
-                  Profile Photo is required
-                </p>
-              )}
               <div className="relative">
                 <div
                   className="flex items-center cursor-pointer focus:outline-none focus-visible:outline-none"
@@ -171,16 +187,12 @@ const Welcome = () => {
                     Or choose one of our defaults
                   </span>
                 </div>
-                {errors.avatar && (
-                  <p className="text-sm text-red-500 py-1">
-                    Profile Photo is required
-                  </p>
-                )}
+
                 {showDefaultAvatars && (
                   <div className="flex justify-center md:justify-start items-center gap-x-4 my-2">
                     {showDefaultAvatars && (
                       <div className="flex justify-start items-center gap-x-4 my-2">
-                        {loading && <div>Loading...</div>}
+                        {loading && <Spinner />}
                         <div>
                           <img
                             className="w-10 h-10 rounded-full cursor-pointer"
@@ -257,7 +269,7 @@ const Welcome = () => {
               </div>
             </div>
           </section>
-          <form onSubmit={handleSubmit(onSubmit)} noValidates>
+          <form onSubmit={handleSubmit(onSubmit)} noValidate>
             <div>
               <div>
                 <label
@@ -288,7 +300,7 @@ const Welcome = () => {
                 )}
               </div>
               <div className="flex justify-center">
-                <button className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 bg-pink-500 text-white py-2 px-8 rounded">
+                <button className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-pink-600 hover:bg-pink-400  focus:ring-4 focus:outline-none focus:ring-pink-300 text-white py-2 px-8 rounded">
                   Next
                 </button>
               </div>

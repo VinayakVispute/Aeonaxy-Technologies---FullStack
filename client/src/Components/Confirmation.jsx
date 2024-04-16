@@ -1,6 +1,6 @@
 import React from "react";
 import { useOnBoardingContext } from "../contexts/Onboarding";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 
@@ -60,6 +60,10 @@ const Confirmation = () => {
     }
   };
 
+  if (!userData.email) {
+    toast.error("Email is Missing Please try Again !!!.");
+    return Navigate("/?page=interest");
+  }
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-4 py-8 bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow">
@@ -103,7 +107,7 @@ const Confirmation = () => {
           </p>
           <p className="text-sm text-gray-600">
             Wrong email address?{" "}
-            <Link className="text-[#bd1e59]" href="/change-email">
+            <Link className="text-[#bd1e59]" to="/change-email">
               Change it
             </Link>
             .

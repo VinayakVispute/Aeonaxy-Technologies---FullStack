@@ -88,7 +88,7 @@ const Welcome = () => {
                 Already a member?{" "}
                 <Link
                   className="font-medium text-pink-600 hover:text-pink-500"
-                  href="/SignIn"
+                  to="/SignIn"
                 >
                   Sign In
                 </Link>
@@ -219,38 +219,41 @@ const Welcome = () => {
                   </div>
                 </div>
                 <div className="flex items-start mb-5">
-                  <div className="flex items-center h-5">
-                    <input
-                      type="checkbox"
-                      {...register("checkbox", {
-                        required: {
-                          value: true,
-                          message: "You must agree to the terms",
-                        },
-                      })}
-                      defaultValue
-                      className="w-4 h-4 focus-visible:outline-none blurBorder focus:shadow-[0px_4px_100px_0px_#d53f8c] rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 "
-                    />
-                  </div>
-                  <label
-                    htmlFor="terms"
-                    className="ms-2 text-sm font-medium text-gray-900 "
-                  >
-                    I agree with the{" "}
-                    <Link href="#" className="text-pink-600 hover:underline ">
-                      terms and conditions
-                    </Link>
-                  </label>
-                  {errors.checkbox && (
-                    <div className="text-sm text-red-500 py-1 ml-6">
-                      {/* Added ml-6 for left margin */}
-                      {errors.checkbox.message || "You must agree to the terms"}
+                  <div className="flex flex-col justify-center  gap-y-4 items-center h-5">
+                    <div className="flex flex-row justify-center items-center ">
+                      <input
+                        type="checkbox"
+                        {...register("checkbox", {
+                          required: {
+                            value: true,
+                            message: "You must agree to the terms",
+                          },
+                        })}
+                        defaultValue
+                        className="w-4 h-4 focus-visible:outline-none blurBorder focus:shadow-[0px_4px_100px_0px_#d53f8c] rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 cursor-pointer "
+                      />
+                      <label
+                        htmlFor="terms"
+                        className="ms-2 text-sm font-medium text-gray-900 "
+                      >
+                        I agree with the{" "}
+                        <Link to="#" className="text-pink-600 hover:underline ">
+                          terms and conditions
+                        </Link>
+                      </label>
                     </div>
-                  )}
+                    {errors.checkbox && (
+                      <div className="text-sm text-red-500 py-1 ml-6">
+                        {/* Added ml-6 for left margin */}
+                        {errors.checkbox.message ||
+                          "You must agree to the terms"}
+                      </div>
+                    )}
+                  </div>
                 </div>
                 <button
                   type="submit"
-                  className="text-white bg-pink-600 hover:bg-pink-500 hover:shadow-[0px_4px_100px_0px_#d53f8c] focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                  className="text-white bg-pink-600 hover:bg-pink-400  focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                 >
                   Register new account
                 </button>
@@ -260,14 +263,14 @@ const Welcome = () => {
                 <br />
                 <Link
                   className="text-pink-600 hover:text-pink-500 ml-2 cursor-pointer"
-                  href="/privacy-policy"
+                  to="/privacy-policy"
                 >
                   Privacy Policy
                 </Link>{" "}
                 and{" "}
                 <Link
                   className="text-pink-600 hover:text-pink-500 cursor-pointer"
-                  href="/terms-of-service"
+                  to="/terms-of-service"
                 >
                   Terms of Service
                 </Link>{" "}

@@ -2,13 +2,14 @@ import { useState } from "react";
 import Logo from "../assets/DribbbleIcon.png";
 import axios from "axios";
 import { useOnBoardingContext } from "../contexts/Onboarding";
-import { useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { TiTick } from "react-icons/ti";
 
 const Selection = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const { userData, setUserData } = useOnBoardingContext();
+  console.log(userData);
   const navigate = useNavigate();
   const handleSelectOption = (option) => {
     setSelectedOption((prevOption) => (prevOption === option ? null : option));
@@ -93,15 +94,23 @@ const Selection = () => {
     }
   };
 
+  if (!userData.location || !userData.avatar) {
+    toast.error("Please fill out location and upload an avatar.");
+    return <Navigate to="/?page=welcome" />;
+  }
+
   return (
     <div className="bg-white py-12">
       <div className="max-w-4xl mx-auto px-4">
         <div className="flex justify-between items-center mb-10">
-          <img
-            src={Logo}
-            className="text-pink-500 text-3xl font-bold h-12 w-auto"
-          />
+          <Link to="/">
+            <img
+              src={Logo}
+              className="text-pink-500 text-3xl font-bold h-12 w-auto cursor-pointer"
+            />
+          </Link>
           <svg
+            onClick={() => navigate(-1)}
             xmlns="http://www.w3.org/2000/svg"
             width={24}
             height={24}
@@ -111,7 +120,7 @@ const Selection = () => {
             strokeWidth={2}
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-gray-400"
+            className="text-gray-400 cursor-pointer"
           >
             <path d="m12 19-7-7 7-7" />
             <path d="M19 12H5" />

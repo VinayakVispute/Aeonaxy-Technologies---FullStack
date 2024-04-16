@@ -19,7 +19,7 @@ const Footer = () => {
             <div className="space-x-4 text-center">
               <Link
                 className="inline-block text-gray-500 hover:text-gray-800"
-                href="#"
+                to="#"
               >
                 <svg
                   className="flex-shrink-0 size-4"
@@ -34,7 +34,7 @@ const Footer = () => {
               </Link>
               <Link
                 className="inline-block text-gray-500 hover:text-gray-800"
-                href="#"
+                to="#"
               >
                 <svg
                   className="flex-shrink-0 size-4"
@@ -49,7 +49,7 @@ const Footer = () => {
               </Link>
               <Link
                 className="inline-block text-gray-500 hover:text-gray-800"
-                href="#"
+                to="#"
               >
                 <svg
                   className="flex-shrink-0 size-4"
@@ -74,7 +74,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Go Pro
                 </Link>
@@ -82,7 +82,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Explore design work
                 </Link>
@@ -90,7 +90,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Design blog
                 </Link>
@@ -98,7 +98,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Overtime podcast
                 </Link>
@@ -106,7 +106,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Playoffs
                 </Link>
@@ -114,7 +114,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Weekly Warm-Up
                 </Link>
@@ -122,7 +122,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Refer a friend
                 </Link>
@@ -130,7 +130,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Code of conduct
                 </Link>
@@ -146,7 +146,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Post a job opening
                 </Link>
@@ -154,7 +154,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Post a freelance project
                 </Link>
@@ -162,7 +162,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Search for designers
                 </Link>
@@ -173,7 +173,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Advertise with us
                 </Link>
@@ -190,7 +190,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   About
                 </Link>
@@ -198,7 +198,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Carrers
                 </Link>
@@ -206,7 +206,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Support
                 </Link>
@@ -214,7 +214,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Media Kit
                 </Link>
@@ -222,7 +222,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Testominals
                 </Link>
@@ -230,7 +230,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   API
                 </Link>
@@ -238,7 +238,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Term of service
                 </Link>
@@ -246,7 +246,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Privacy Policy
                 </Link>
@@ -254,7 +254,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Cookie Policy
                 </Link>
@@ -270,7 +270,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Design Jobs
                 </Link>
@@ -278,7 +278,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Designers for Hire
                 </Link>
@@ -286,7 +286,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Freelance Designer for hire
                 </Link>
@@ -294,7 +294,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Tags
                 </Link>
@@ -302,7 +302,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Places
                 </Link>
@@ -315,7 +315,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Dribbble Marketplace
                 </Link>
@@ -323,7 +323,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Creative Market
                 </Link>
@@ -331,7 +331,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Footspring
                 </Link>
@@ -339,7 +339,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Font Squrriel
                 </Link>
@@ -355,7 +355,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Freelancing
                 </Link>
@@ -363,7 +363,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Design Hiring
                 </Link>
@@ -371,7 +371,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Design Portfolio
                 </Link>
@@ -379,7 +379,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Design Eduction
                 </Link>
@@ -387,7 +387,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Creative Process
                 </Link>
@@ -395,7 +395,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Design Industry Trends
                 </Link>
@@ -403,7 +403,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Refer a friend
                 </Link>
@@ -411,7 +411,7 @@ const Footer = () => {
               <p>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Code of conduct
                 </Link>
@@ -490,7 +490,7 @@ const Footer = () => {
                 >
                   <Link
                     className="flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500"
-                    href="#"
+                    to="#"
                   >
                     <svg
                       className="size-3.5 rounded-full"
@@ -527,7 +527,7 @@ const Footer = () => {
                  </Link>
                   <Link
                     className="flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500"
-                    href="#"
+                    to="#"
                   >
                     <svg
                       className="size-3 rounded-full"
@@ -543,7 +543,7 @@ const Footer = () => {
                  </Link>
                   <Link
                     className="flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500"
-                    href="#"
+                    to="#"
                   >
                     <svg
                       className="size-3 rounded-full"
@@ -559,7 +559,7 @@ const Footer = () => {
                  </Link>
                   <Link
                     className="flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500"
-                    href="#"
+                    to="#"
                   >
                     <svg
                       className="size-3 rounded-full"
@@ -577,7 +577,7 @@ const Footer = () => {
                  </Link>
                   <Link
                     className="flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500"
-                    href="#"
+                    to="#"
                   >
                     <svg
                       className="size-3 rounded-full"
@@ -598,31 +598,31 @@ const Footer = () => {
                         width={30}
                         height={20}
                         transform="matrix(76.8 0 0 76.8 128 128)"
-                        xlinkHref="#a"
+                        xlinkto="#a"
                       />
                       <use
                         width={30}
                         height={20}
                         transform="rotate(-121 142.6 -47) scale(25.5827)"
-                        xlinkHref="#a"
+                        xlinkto="#a"
                       />
                       <use
                         width={30}
                         height={20}
                         transform="rotate(-98.1 198 -82) scale(25.6)"
-                        xlinkHref="#a"
+                        xlinkto="#a"
                       />
                       <use
                         width={30}
                         height={20}
                         transform="rotate(-74 272.4 -114) scale(25.6137)"
-                        xlinkHref="#a"
+                        xlinkto="#a"
                       />
                       <use
                         width={30}
                         height={20}
                         transform="matrix(16 -19.968 19.968 16 256 230.4)"
-                        xlinkHref="#a"
+                        xlinkto="#a"
                       />
                     </svg>
                     中文 (繁體)
@@ -633,19 +633,19 @@ const Footer = () => {
               {/* <div className="space-x-4 text-sm ms-4">
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Terms
                </Link>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Privacy
                </Link>
                 <Link
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800"
-                  href="#"
+                  to="#"
                 >
                   Status
                </Link>

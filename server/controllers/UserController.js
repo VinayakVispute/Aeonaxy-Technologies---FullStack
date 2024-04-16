@@ -32,26 +32,38 @@ const registerUser = async (req, res) => {
     // Handle avatar upload
     let avatarUrl = null;
     const imageFile = req?.files?.avatar;
-    console.log("Image file", imageFile);
+
     if (imageFile) {
-      const supportedTypes = ["png", "jpg", "jpeg"];
-      const fileType = imageFile?.name?.split(".")[1]?.toLowerCase();
-      console.log("name", imageFile?.name);
-      if (!isFileTypeSupported(fileType, supportedTypes)) {
-        console.log("File type not supported");
+      if (imageFile) {
+        const supportedTypes = ["png", "jpg", "jpeg"];
+        const fileType = imageFile?.name?.split(".")[1]?.toLowerCase();
+        console.log("name", imageFile?.name);
+        if (!isFileTypeSupported(fileType, supportedTypes)) {
+          console.log("File type not supported");
+          return res
+            .status(400)
+            .json({ success: false, message: "File type not supported" });
+        }
+        console.log("Uploading file to cloudinary");
+        const response = await uploadFileToCloudinary(
+          imageFile,
+          "Aeonaxy FullStack"
+        );
+        console.log("Response", response);
+        avatarUrl = response?.secure_url;
+        console.log("Avatar URL", avatarUrl);
+      }
+    } else {
+      const { avatar } = req.body;
+      console.log("Image Link", avatar);
+      if (!avatar) {
         return res
           .status(400)
-          .json({ success: false, message: "File type not supported" });
+          .json({ success: false, message: "Image file not found" });
       }
-      console.log("Uploading file to cloudinary");
-      const response = await uploadFileToCloudinary(
-        imageFile,
-        "Aeonaxy FullStack"
-      );
-      console.log("Response", response);
-      avatarUrl = response?.secure_url;
-      console.log("Avatar URL", avatarUrl);
+      avatarUrl = avatar;
     }
+
     console.log("Avatar URL", avatarUrl);
     // Hash password
     const hashedPassword = await bcrypt.hash(password, 10);

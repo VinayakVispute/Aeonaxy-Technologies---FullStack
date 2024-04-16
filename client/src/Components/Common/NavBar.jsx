@@ -9,7 +9,7 @@ const NavBar = () => {
         aria-label="Global"
       >
         <div className="flex items-center justify-between">
-          <Link className="flex-none text-xl font-semibold " href="/">
+          <Link className="flex-none text-xl font-semibold " to="/">
             <img src={Logo} alt="Logo" className="w-auto h-6 lg:h-8" />
           </Link>
           <div className="md:hidden">
@@ -61,37 +61,37 @@ const NavBar = () => {
           <div className="flex flex-col w-full  gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:gap-y-0 lg:gap-x-7 md:gap-x-4 md:mt-0 md:ps-4 lg:ps-7 mr-2">
             <Link
               className="font-medium  text-gray-500 hover:text-gray-400 md:py-6 text-sm text-left md:text-center   "
-              href="/inspiration"
+              to="/inspiration"
             >
               Inspiration
             </Link>
             <Link
               className="font-medium  text-gray-500 hover:text-gray-400 md:py-6 text-sm text-left md:text-center   "
-              href="/find-work"
+              to="/find-work"
             >
               Find Work
             </Link>
             <Link
               className="font-medium  text-gray-500 hover:text-gray-400 md:py-6 text-sm text-left md:text-center   "
-              href="/learn-design"
+              to="/learn-design"
             >
               Learn Design
             </Link>
             <Link
               className="font-medium  text-gray-500 hover:text-gray-400 md:py-6 text-sm text-left md:text-center   "
-              href="/go-pro"
+              to="/go-pro"
             >
               Go Pro
             </Link>
             <Link
               className="font-medium  text-gray-500 hover:text-gray-400 md:py-6 text-sm text-left md:text-center   "
-              href="/hire-designers"
+              to="/hire-designers"
             >
               Hire Designers
             </Link>
             <Link
               className="font-medium  text-gray-500 hover:text-gray-400 md:py-6 text-sm text-left md:text-center block md:hidden   "
-              href="/upload"
+              to="/upload"
             >
               Upload
             </Link>
