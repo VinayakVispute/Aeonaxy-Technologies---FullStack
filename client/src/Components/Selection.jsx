@@ -119,80 +119,125 @@ const Selection = () => {
         <h1 className="text-4xl font-bold text-center mb-4">
           What brings you to Pibbler?
         </h1>
-        <p className="text-center text-lg mb-12">
+        <p className="text-center text-lg mb-20">
           Select the options that best describe you. Don't worry, you can
           explore other options later.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex flex-col items-center">
-            <div className="relative">
+            <div
+              className={`relative bg-gray-200 h-[300px] rounded-lg transition-transform transition-border duration-500 cursor-pointer ${
+                selectedOption === "Designer"
+                  ? "transform -translate-y-4 border-2 border-pink-500"
+                  : "blurBorder"
+              }`}
+              onClick={() => handleSelectOption("Designer")}
+            >
               <img
                 src="https://res.cloudinary.com/djqjag779/image/upload/f_auto,q_auto/fmlynnsyxqkbe9t6ppxh"
                 alt="Designer looking to share work"
-                className={`mb-4 bg-gray-200 p-4 rounded-lg transition-transform transition-bg duration-500  ${
+                className={`relative mb-4 p-4 rounded-lg transition-transform duration-500 ${
                   selectedOption === "Designer"
-                    ? "transform -translate-y-4 border-2 border-pink-500"
-                    : "blurBorder"
+                    ? "transform -translate-y-4 -top-[5rem]"
+                    : ""
                 }`}
                 width={400}
                 height={400}
                 style={{
                   aspectRatio: "400 / 400",
                   objectFit: "cover",
-                  cursor: "pointer",
                 }}
-                onClick={() => handleSelectOption("Designer")}
               />
-              <p className="text-center font-medium">
+              <p
+                className={`m-2 text-center absolute top-[9.5rem] text-sm transition-opacity transition-max-h  ${
+                  selectedOption === "Designer"
+                    ? "max-h-[100px] opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                Today we will take a look at beautifully designed Today we will
+                take a look at beautifully designed Today we will take a look at
+                beautifully designed
+              </p>
+              <p className="text-center font-medium pt-8">
                 I'm a designer looking to share my work
               </p>
             </div>
           </div>
 
           <div className="flex flex-col items-center">
-            <div className="relative">
+            <div
+              className={`relative bg-gray-200 h-[300px] rounded-lg transition-transform transition-border duration-500 cursor-pointer ${
+                selectedOption === "Hiring"
+                  ? "transform -translate-y-4 border-2 border-pink-500"
+                  : "blurBorder"
+              }`}
+              onClick={() => handleSelectOption("Hiring")}
+            >
               <img
                 src="https://res.cloudinary.com/djqjag779/image/upload/f_auto,q_auto/keaqtmvzkwiueyvvje5w"
                 alt="Looking to hire a designer"
-                className={`mb-4 bg-gray-200 p-4 rounded-lg transition-transform transition-bg duration-500  ${
+                className={`relative mb-4 p-4 rounded-lg transition-transform duration-500 ${
                   selectedOption === "Hiring"
-                    ? "transform -translate-y-4 border-2 border-pink-500 "
-                    : "blurBorder"
+                    ? "transform -translate-y-4 -top-[5rem]"
+                    : ""
                 }`}
                 width={400}
                 height={400}
                 style={{
                   aspectRatio: "400 / 400",
                   objectFit: "cover",
-                  cursor: "pointer",
                 }}
-                onClick={() => handleSelectOption("Hiring")}
               />
-              <p className="text-center font-medium">
+              <p
+                className={`m-2 text-center absolute top-[9.5rem] text-sm transition-opacity transition-max-h  ${
+                  selectedOption === "Hiring"
+                    ? "max-h-[100px] opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                I'm looking to hire a designer
+              </p>
+              <p className="text-center font-medium pt-8">
                 I'm looking to hire a designer
               </p>
             </div>
           </div>
+
           <div className="flex flex-col items-center">
-            <div className="relative ">
+            <div
+              className={`relative bg-gray-200 h-[300px] rounded-lg transition-transform transition-border duration-500 cursor-pointer ${
+                selectedOption === "Inspiration"
+                  ? "transform -translate-y-4 border-2 border-pink-500"
+                  : "blurBorder"
+              }`}
+              onClick={() => handleSelectOption("Inspiration")}
+            >
               <img
                 src="https://res.cloudinary.com/djqjag779/image/upload/f_auto,q_auto/fpjcf4iq0kuiucdxulpa"
                 alt="Looking for design inspiration"
-                className={`mb-4 bg-gray-200 p-4 rounded-lg transition-transform transition-bg duration-500  ${
+                className={`relative mb-4 p-4 rounded-lg transition-transform duration-500 ${
                   selectedOption === "Inspiration"
-                    ? "transform -translate-y-4 border-2 border-pink-500  "
-                    : "blurBorder"
+                    ? "transform -translate-y-4 -top-[5rem]"
+                    : ""
                 }`}
                 width={400}
                 height={400}
                 style={{
                   aspectRatio: "400 / 400",
                   objectFit: "cover",
-                  cursor: "pointer",
                 }}
-                onClick={() => handleSelectOption("Inspiration")}
               />
-              <p className="text-center font-medium">
+              <p
+                className={`m-2 text-center absolute top-[9.5rem] text-sm transition-opacity transition-max-h  ${
+                  selectedOption === "Inspiration"
+                    ? "max-h-[100px] opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                I'm looking for design inspiration
+              </p>
+              <p className="text-center font-medium pt-8">
                 I'm looking for design inspiration
               </p>
             </div>
